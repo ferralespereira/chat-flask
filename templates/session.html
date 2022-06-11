@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Flask_Chat_App</title>
-</head>
-<body>
 
+{% extends 'layout.html' %}
+{% block title %}Session{% endblock title %}
+
+{% block content %}
+    
   <h3 id="first-text" style='color: #ccc;font-size: 30px;'>No message yet..</h3>
   <div id="message-holder"></div>
 
@@ -21,5 +18,5 @@
 
   <script type="text/javascript" src="{{ url_for('static', filename = 'js/session.js') }}"></script>
 
-</body>
-</html>
+{% endblock content %}
+

@@ -16,10 +16,9 @@ function sendMessage(){
     user_name : user_name.value,
     message : message.value
   });
-
 }
 
-socket.on('my response', function(msg) {
+socket.on('my response', function(msg:any) {
     console.log(msg);
     if(typeof msg.user_name !== 'undefined'){
 
