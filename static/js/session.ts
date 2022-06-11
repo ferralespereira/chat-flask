@@ -27,5 +27,7 @@ socket.on('my response', function(msg:any) {
       
       first_text.innerHTML = "";
       message_holder.innerHTML += '<div><b style="color: #000">'+msg.user_name+'</b> '+msg.message+'</div>';
+    }else{
+      console.log('new user connected');
     }
 });
