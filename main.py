@@ -17,7 +17,7 @@ def  date_now():
 
 @app.route('/')
 def sessions():
-    return render_template('session.html')
+    return render_template('chat.html')
 
 count = 0
 
