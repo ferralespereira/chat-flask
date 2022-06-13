@@ -2,7 +2,7 @@ let socket:any = io.connect('http://' + document.domain + ':' + location.port);
 
 socket.on( 'connect', function() {
     socket.emit('my event', {
-        data: 'User Connected'
+        data: 'New User Connected or page refreshed'
     });
 });
 
@@ -18,7 +18,6 @@ function sendMessage(){
   });
 }
 
-let users_amount:number = 0;
 socket.on('my response', function(msg:any) {
 
     console.log(msg);
@@ -29,8 +28,5 @@ socket.on('my response', function(msg:any) {
       
       first_text.innerHTML = "";
       message_holder.innerHTML += '<div><b style="color: #000">'+msg.user_name+'</b> '+msg.message+'</div>';
-    }else{
-      users_amount++;
-      console.log('new user connected '+users_amount);
     }
 });
