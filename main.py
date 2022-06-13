@@ -19,16 +19,8 @@ def  date_now():
 def sessions():
     return render_template('chat.html')
 
-count = 0
-
-@socketio.on('counting users connected')
-def connect():
-    count += 1
-    socketio.emit('my response', {'count': count})
-
-
 @socketio.on('my event')
-def handle_my_custom_event(json, methods=['GET', 'POST']):
+def handle_my_custom_event(json):
     socketio.emit('my response', json)
 
 if __name__ == '__main__':
