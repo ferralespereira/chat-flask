@@ -19,6 +19,14 @@ def  date_now():
 def sessions():
     return render_template('session.html')
 
+count = 0
+
+@socketio.on('counting users connected')
+def connect():
+    count += 1
+    socketio.emit('my response', {'count': count})
+
+
 @socketio.on('my event')
 def handle_my_custom_event(json, methods=['GET', 'POST']):
     socketio.emit('my response', json)
